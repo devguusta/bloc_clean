@@ -24,8 +24,12 @@ class LoginController extends Bloc<LoginEvent, LoginState> {
         );
       },
     );
-  }
-  void setEmailValid(bool value) {
-    emailValid = value;
+    on<LoginToValidateEmail>((event, emit) {
+      if (event.email.length > 8 && event.password.length > 6) {
+        emit(LoginStateValidForms());
+      } else {
+        emit(LoginStateInvalidForms());
+      }
+    });
   }
 }

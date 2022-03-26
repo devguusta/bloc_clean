@@ -21,3 +21,7 @@ class LoginStateFailure extends LoginState {
 class LoginStateLoading extends LoginState {}
 
 class LoginStateEmpty extends LoginState {}
+
+class LoginStateInvalidForms extends LoginState {}
+
+class LoginStateValidForms extends LoginState {}
