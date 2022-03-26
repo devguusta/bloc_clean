@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 class AppBarThemeCore {
   static final AppBarTheme lighAppBarTime = AppBarTheme(
-    color: Colors.indigo,
+    color: Colors.transparent,
     iconTheme: const IconThemeData(color: Colors.black),
     toolbarTextStyle: const TextTheme(
       headline6: TextStyle(
@@ -35,7 +35,7 @@ class ElevationButtonTheme {
   static final ElevatedButtonThemeData lightElevationButton =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      primary: Colors.black,
+      primary: Colors.orange,
       textStyle: const TextStyle(
         color: Colors.white,
         fontSize: 20,

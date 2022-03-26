@@ -15,6 +15,7 @@ class LoginController extends Bloc<LoginEvent, LoginState> {
     on<LoginFetchListUser>(
       (event, emit) async {
         emit(LoginStateLoading());
+
         final result = await getUser.call();
         result.fold(
           (l) => emit(LoginStateFailure(error: l)),
@@ -24,12 +25,5 @@ class LoginController extends Bloc<LoginEvent, LoginState> {
         );
       },
     );
-    on<LoginToValidateEmail>((event, emit) {
-      if (event.email.length > 8 && event.password.length > 6) {
-        emit(LoginStateValidForms());
-      } else {
-        emit(LoginStateInvalidForms());
-      }
-    });
   }
 }
